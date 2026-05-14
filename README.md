@@ -23,7 +23,7 @@ You have AI agents in production. Every model update, prompt change, or retrieva
 
 ## Enterprise
 
-For teams deploying agents in regulated environments. SSO, audit logs, SOC 2, on-prem deployment, priority support. [Book a call](mailto:rigr@nullphnix.dev).
+For teams deploying agents in regulated environments. SSO, audit logs, SOC 2, on-prem deployment, priority support. [Book a call](mailto:Contact@phnix.dev).
 
 ## Quickstart
 
