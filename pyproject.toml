@@ -1,0 +1,20 @@
+[project]
+name = "rigr"
+version = "0.1.0"
+description = "Agent evaluation framework. Define expectations. Catch regressions. Prove your agent isn't getting worse."
+license = "Apache-2.0"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+    "click>=8.0",
+    "rich>=13.0",
+    "httpx>=0.27",
+]
+
+[project.scripts]
+rigr = "rigr.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
