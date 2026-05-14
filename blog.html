@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>We spent months measuring whether our AI was getting better or worse — Rigr</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0f; color: #e0e0e0; line-height: 1.8; }
+  .container { max-width: 680px; margin: 0 auto; padding: 60px 24px; }
+  h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; color: #fff; }
+  .date { color: #666; font-size: 14px; margin-bottom: 40px; }
+  p { color: #bbb; margin-bottom: 20px; font-size: 17px; }
+  h2 { color: #fff; font-size: 22px; margin: 40px 0 16px; }
+  pre { background: #14141f; border: 1px solid #222; border-radius: 8px; padding: 20px; color: #a855f7; font-size: 14px; overflow-x: auto; margin: 24px 0; }
+  code { font-family: 'SF Mono', 'Fira Code', monospace; }
+  a { color: #6366f1; }
+  hr { border: none; border-top: 1px solid #222; margin: 60px 0; }
+  footer { color: #555; font-size: 13px; text-align: center; margin-top: 40px; }
+  footer a { color: #6366f1; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>We spent months measuring whether our AI was getting better or worse. Most teams don't.</h1>
+  <div class="date">May 2026 — Josii</div>
+
+  <p>I have been building AI agents for a while now. Not the kind that answer trivia questions. The kind that actually do work. Trade crypto. Scrape documentation. Extract structured data from ancient texts.</p>
+
+  <p>Here is the thing nobody tells you about agents. They break. Silently. You change the prompt by three words. You swap the model. You tweak the retrieval pipeline. And suddenly your agent that was nailing refund calculations last week is now confidently wrong about everything. And you have no way to know until a customer tells you.</p>
+
+  <p>Most teams handle this by looking at outputs and going "yeah that looks right." That is not testing. That is vibes.</p>
+
+  <p>So we built something different. A protocol for agent evaluation that actually catches regressions before they hit production. We called it Rigr.</p>
+
+  <h2>What we learned from our own agent</h2>
+
+  <p>We have this model called Ymir. It predicts political state transitions from historical texts. Like, here is what the government looked like before a coup, here is what it looked like after. Very niche. Very structured.</p>
+
+  <p>The problem was we kept making changes. New training data. Tweaked loss functions. Different hyperparameters. And sometimes the model got worse on specific fields but we would not notice because the overall score looked fine.</p>
+
+  <p>So we built a protocol. Frozen baselines. Every time we run the model, we compare against a known good snapshot. If a field that was passing before suddenly fails, we catch it immediately. Not next week when we happen to re-read the outputs.</p>
+
+  <p>We also built audit packs. Extra test cases that the model never saw during development. Turns out our best model that scored 85 percent on validation dropped to 52 percent on the audit. The validation score was lying to us. The protocol caught it.</p>
+
+  <p>Most teams would have shipped the 85 percent and called it a win.</p>
+
+  <h2>What Rigr actually does</h2>
+
+  <p>It is dead simple. You write test cases. Input and expected output. Rigr runs them against your agent and tells you what passed and what failed. You freeze a baseline. From that point on, every run compares against it. New failures get flagged. Old failures that got fixed get marked resolved.</p>
+
+  <p>That is it. No SDK integration in your agent. No cloud dependency. No dashboard you have to learn. Just a CLI tool that tells you whether your agent got better or worse since last time.</p>
+
+  <pre><code>pip install rigr
+rigr init
+rigr test --agent my_agent.py</code></pre>
+
+  <h2>Why I am open sourcing it</h2>
+
+  <p>The agent infrastructure space is weird right now. There are like fifty companies building agent frameworks. Memory layers. Orchestration tools. Vector databases. Everyone is building the thing that helps you build agents.</p>
+
+  <p>Nobody is building the thing that helps you know if your agent actually works.</p>
+
+  <p>DeepEval and Evidently are solid tools but they evaluate LLM outputs. They tell you if the chatbot sounds natural. They do not tell you if your support agent still calculates refunds correctly after a model swap. That is a different problem.</p>
+
+  <p>So here is Rigr. Apache 2.0. Use it. Break it. Tell me what sucks. If you are deploying agents in production and your compliance team is asking how you know they are safe, this is for you.</p>
+
+  <hr>
+
+  <p><a href="https://github.com/Null-Phnix/rigr">GitHub</a> &middot; <a href="mailto:Contact@phnix.dev">Enterprise</a></p>
+</div>
+<footer>
+  <a href="/rigr/">← Back to Rigr</a>
+</footer>
+</body>
+</html>
