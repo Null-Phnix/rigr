@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rigr — Agent Evaluation That Ships With Proof</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0f; color: #e0e0e0; line-height: 1.6; }
+  .container { max-width: 800px; margin: 0 auto; padding: 60px 24px; }
+  h1 { font-size: 48px; font-weight: 800; line-height: 1.15; margin-bottom: 16px; background: linear-gradient(135deg, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .subtitle { font-size: 20px; color: #888; margin-bottom: 40px; }
+  .cta { display: inline-block; background: #6366f1; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; margin-right: 16px; }
+  .cta-secondary { display: inline-block; background: transparent; color: #888; padding: 14px 32px; border-radius: 8px; text-decoration: none; border: 1px solid #333; font-weight: 600; font-size: 16px; }
+  .section { margin-top: 80px; }
+  h2 { font-size: 28px; margin-bottom: 24px; color: #fff; }
+  p { color: #999; margin-bottom: 16px; font-size: 17px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  .card { background: #14141f; border: 1px solid #222; border-radius: 12px; padding: 24px; }
+  .card h3 { color: #fff; margin-bottom: 8px; font-size: 18px; }
+  .card p { font-size: 14px; color: #888; }
+  .icon { font-size: 28px; margin-bottom: 12px; }
+  pre { background: #14141f; border: 1px solid #222; border-radius: 8px; padding: 20px; color: #a855f7; font-size: 14px; overflow-x: auto; margin: 24px 0; }
+  code { font-family: 'SF Mono', 'Fira Code', monospace; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+  .stat { text-align: center; }
+  .stat-number { font-size: 36px; font-weight: 800; background: linear-gradient(135deg, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-label { color: #888; font-size: 14px; margin-top: 4px; }
+  .comparison { width: 100%; border-collapse: collapse; margin-top: 24px; }
+  .comparison th, .comparison td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #222; }
+  .comparison th { color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .comparison td { font-size: 14px; }
+  .check { color: #22c55e; }
+  .cross { color: #ef4444; }
+  footer { margin-top: 80px; padding-top: 32px; border-top: 1px solid #222; color: #555; font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Your AI agent is getting worse. Prove it isn't.</h1>
+  <p class="subtitle">Open-source agent evaluation framework. Define expectations. Catch regressions before customers do. Enterprise-ready for regulated teams.</p>
+  <a href="https://github.com/Null-Phnix/rigr" class="cta">GitHub</a>
+  <a href="mailto:rigr@nullphnix.dev" class="cta-secondary">Enterprise →</a>
+
+  <pre><code>$ pip install rigr
+$ rigr init
+$ rigr test --agent my_agent.py
+
+═══ Rigr Eval Report ═══
+  5/5 cases | 23/24 fields | 95.8% 
+  Baseline comparison: 0 new errors, 0 resolved
+  ✓ PASS</code></pre>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-number">&lt;1s</div><div class="stat-label">Per test run</div></div>
+    <div class="stat"><div class="stat-number">0</div><div class="stat-label">Code changes in your agent</div></div>
+    <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Open source (Apache 2.0)</div></div>
+  </div>
+
+  <div class="section">
+    <h2>Agents break silently</h2>
+    <p>Every model update, prompt change, or retrieval tweak risks degrading your agent. LLM eval tools test chat quality — they don't test whether your support agent still calculates refunds correctly or whether your compliance bot still catches policy violations.</p>
+    <p>Rigr tests what your agent <em>does</em>, not how it sounds.</p>
+  </div>
+
+  <div class="section">
+    <h2>How it works</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">1</div>
+        <h3>Define expectations</h3>
+        <p>JSON schema for what your agent must output. Field-level constraints. No ambiguous "looks good to me."</p>
+      </div>
+      <div class="card">
+        <div class="icon">2</div>
+        <h3>Write test cases</h3>
+        <p>Inputs with expected outputs. Version-controlled, reviewable. The same cases run every time.</p>
+      </div>
+      <div class="card">
+        <div class="icon">3</div>
+        <h3>Freeze baselines</h3>
+        <p>Lock known-good results. Every future run compares against them. Regressions are caught, not discovered.</p>
+      </div>
+      <div class="card">
+        <div class="icon">4</div>
+        <h3>Generate audit reports</h3>
+        <p>Per-field accuracy, changelog of what broke and what was fixed. Compliance-ready evidence for your team.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Not another LLM eval tool</h2>
+    <table class="comparison">
+      <tr><th>Capability</th><th>DeepEval</th><th>Evidently</th><th>Rigr</th></tr>
+      <tr><td>LLM output quality</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="cross">✗</span></td></tr>
+      <tr><td>Agent task verification</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Frozen baseline comparison</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Per-field regression detection</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Audit-ready compliance reports</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Zero agent code changes</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Enterprise</h2>
+    <p>For teams deploying agents in regulated environments. SSO, audit logs, SOC 2, on-prem deployment, priority support. Your compliance team will thank you.</p>
+    <a href="mailto:rigr@nullphnix.dev" class="cta">Book a call</a>
+  </div>
+</div>
+<footer>Rigr — Apache 2.0. Built for teams that ship agents to production.</footer>
+</body>
+</html>
