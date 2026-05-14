@@ -1,0 +1,72 @@
+[
+  {
+    "company": "crewAIInc",
+    "product": "crewAIInc/crewAI",
+    "stars": 51361,
+    "desc": "Multi-agent orchestration",
+    "angle": "Agent infrastructure company \u2014 needs eval layer for enterprise customers"
+  },
+  {
+    "company": "microsoft",
+    "product": "microsoft/autogen",
+    "stars": 58012,
+    "desc": "Agent framework",
+    "angle": "Agent infrastructure company \u2014 needs eval layer for enterprise customers"
+  },
+  {
+    "company": "run-llama",
+    "product": "run-llama/llama_index",
+    "stars": 49389,
+    "desc": "RAG framework",
+    "angle": "Agent infrastructure company \u2014 needs eval layer for enterprise customers"
+  },
+  {
+    "company": "langchain-ai",
+    "product": "langchain-ai/langgraph",
+    "stars": 32003,
+    "desc": "Agent workflows",
+    "angle": "Agent infrastructure company \u2014 needs eval layer for enterprise customers"
+  },
+  {
+    "company": "mem0ai",
+    "product": "mem0ai/mem0",
+    "stars": 55644,
+    "desc": "Agent memory layer",
+    "angle": "Agent infrastructure company \u2014 needs eval layer for enterprise customers"
+  },
+  {
+    "company": "deepset-ai",
+    "product": "deepset-ai/haystack",
+    "stars": 25220,
+    "desc": "Agent orchestration",
+    "angle": "Agent infrastructure company \u2014 needs eval layer for enterprise customers"
+  },
+  {
+    "company": "chroma-core",
+    "product": "chroma-core/chroma",
+    "stars": 27943,
+    "desc": "Vector database",
+    "angle": "Agent infrastructure company \u2014 needs eval layer for enterprise customers"
+  },
+  {
+    "company": "qdrant",
+    "product": "qdrant/qdrant",
+    "stars": 31301,
+    "desc": "Vector database",
+    "angle": "Agent infrastructure company \u2014 needs eval layer for enterprise customers"
+  },
+  {
+    "company": "weaviate",
+    "product": "weaviate/weaviate",
+    "stars": 16177,
+    "desc": "Vector database",
+    "angle": "Agent infrastructure company \u2014 needs eval layer for enterprise customers"
+  },
+  {
+    "company": "letta-ai",
+    "product": "letta-ai/letta",
+    "stars": 22699,
+    "desc": "Agent memory",
+    "angle": "Agent infrastructure company \u2014 needs eval layer for enterprise customers"
+  }
+]

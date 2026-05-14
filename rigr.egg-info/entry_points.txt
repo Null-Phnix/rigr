@@ -1,0 +1,2 @@
+[console_scripts]
+rigr = rigr.cli:main

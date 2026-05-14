@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+rigr/__init__.py
+rigr/cli.py
+rigr/eval_runner.py
+rigr/freeze.py
+rigr/reporter.py
+rigr.egg-info/PKG-INFO
+rigr.egg-info/SOURCES.txt
+rigr.egg-info/dependency_links.txt
+rigr.egg-info/entry_points.txt
+rigr.egg-info/requires.txt
+rigr.egg-info/top_level.txt
+test/test_eval.py
